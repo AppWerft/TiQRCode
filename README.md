@@ -11,10 +11,10 @@ Usage
 Example for usage inside jspdf:
 ~~~
 var PADDING = 5;
-var qrcode = new (require('de.appwerfrt.qrcode'))('http://google.com','M');
-var code = qrcode.getData();
-var R = width / qrcode.getSize();
-doc.setDrawColor(color);
+var qrcode = new (require('de.appwerft.qrcode'))('http://google.com','M');
+var code = qrcode.getData();  // matrix of '0's' and '1's'
+var R = width / qrcode.getSize();   // calculating of raster
+doc.setDrawColor(color);  // pdf syntax, i.e. 0 for black
 doc.setFillColor(color);
 for (var r = 0; r < code.length; r += 1) {
     for (var c = 0; c < code[r].length; c += 1) {
